@@ -192,7 +192,7 @@
         <p style="opacity: 0.9; font-size: 14px; margin: 10px 0 20px;">Get real-time repair help from pro technicians.</p>
         <a href="https://discord.gg/SDCDzKTHVb" target="_blank" style="text-decoration: none;">
           <button style="background: white; color: #5865F2; border: none; padding: 12px 30px; border-radius: 12px; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 10px; margin: 0 auto;">
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" width="20"> OPEN DISCORD LOUNGE
+            <img src="https://raw.githubusercontent.com/whatsappinstaller0707-ux/PhoneHub-/main/icon-512.png" width="20"> OPEN DISCORD LOUNGE
           </button>
         </a>
       </div>
@@ -217,12 +217,10 @@
 </nav>
 
 <script>
-  // PWA Registration
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js').catch(() => {}); });
   }
 
-  // Discord Function
   async function postToDiscord() {
     const messageInput = document.getElementById('communityInput');
     const message = messageInput.value.trim();
@@ -234,7 +232,7 @@
             method: 'POST', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 username: "PhoneHub Pro Lounge",
-                avatar_url: "https://cdn-icons-png.flaticon.com/512/2111/2111370.png",
+                avatar_url: "https://raw.githubusercontent.com/whatsappinstaller0707-ux/PhoneHub-/main/icon-512.png",
                 content: `**New Community Question**\n**User:** ${userName}\n**Message:** ${message}`
             })
         });
@@ -242,7 +240,6 @@
     } catch (error) { alert("❌ Failed to connect."); }
   }
 
-  // REPAIR DATABASE (Full 25)
   const repairDb = [
     { id: 1, cat: "Performance", title: "1. Slow Phone Performance", steps: ["Close background apps.", "Clear system cache.", "Uninstall unused apps.", "Check for storage space."] },
     { id: 2, cat: "Performance", title: "2. Bad Battery Life", steps: ["Dim brightness.", "Disable GPS/Bluetooth.", "Enable Power Saver.", "Check battery usage settings."] },
@@ -271,7 +268,6 @@
     { id: 25, cat: "Connectivity", title: "25. Mobile Data Fix", steps: ["Check balance.", "Verify APN.", "Toggle Airplane Mode."] }
   ];
 
-  // TIPS DATABASE (Full 24)
   const tipsDb = [
     { title: "1. Uninstall Apps You Don’t Need", desc: "Long-press icon > App Info > Uninstall." },
     { title: "2. Use Digital Wellbeing", desc: "Use Bedtime mode and Focus mode to block distracting apps." },
@@ -340,7 +336,6 @@
     document.getElementById('theme-icon').innerText = isDark ? 'dark_mode' : 'light_mode';
   }
 
-  // INIT
   renderFixList(repairDb.slice(0, 5), 'featuredFixes');
   renderFixList(repairDb);
   renderTips();
